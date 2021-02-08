@@ -172,12 +172,11 @@ delete2 x (h:t) | x == h = t
 
 
 --Ex22
-barra :: Eq a => [a] -> [a] -> [a]
-barra [] [] = []
-barra l [] = l
-barra [] l = []
-barra (x:xs) (y:ys) | x == y = barra xs ys
-                    | otherwise = x : barra xs (y:ys)
+barrabarra :: Eq a => [a] -> [a] -> [a]
+barrabarra [] [] = []
+barrabarra l [] = l
+barrabarra [] l = []
+barrabarra l (y:ys) = barrabarra (delete y l) ys
 
 
 --Ex23
